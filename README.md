@@ -1,1 +1,1 @@
-A simple auction app that utilizes websockets asynchronous updating!
+An auction app that utilizes websockets asynchronous updating!

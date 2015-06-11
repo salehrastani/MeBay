@@ -1,0 +1,118 @@
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20150611232433)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150611232433"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-06-11 16:37:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/hamed/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 65ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-06-11 16:38:09 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 3822ms (Views: 3818.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/scaffolds.self-1080a3d1535efc947f342062507530c7e7cd765d5f5e21e9e3c0e32ab500edda.css?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-11 16:38:13 -0700
+
+
+Started GET "/assets/products.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-11 16:38:14 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-11 16:38:14 -0700
+
+
+Started GET "/products/new" for ::1 at 2015-06-11 16:38:16 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (96.5ms)
+  Rendered products/new.html.haml within layouts/application (171.4ms)
+Completed 200 OK in 252ms (Views: 246.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/products" for ::1 at 2015-06-11 16:38:57 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"78dEQgsTSZ6i5XUJi43mHLH5EJam7OMJ8geEAU2oz1mH0uVlJmD+ktRJdi5194S8lxcD+7G+83sELTQwORoqzw==", "product"=>{"name"=>"Hammer", "image"=>"http://s.hswstatic.com/gif/hammer-1.jpg"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "products" ("name", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hammer"], ["image", "http://s.hswstatic.com/gif/hammer-1.jpg"], ["created_at", "2015-06-11 23:38:57.167133"], ["updated_at", "2015-06-11 23:38:57.167133"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 33ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/products/1" for ::1 at 2015-06-11 16:38:57 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered products/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 229ms (Views: 104.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2015-06-11 16:39:13 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 511ms (Views: 509.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/new" for ::1 at 2015-06-11 16:39:15 -0700
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.haml (2.0ms)
+  Rendered products/new.html.haml within layouts/application (19.5ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2015-06-11 16:39:37 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2jMeLmP6N6D9VKAtgd/xSYXf0Mmgddg/dY7zXg8gJiyyJr8JTomArIv4owp/pZPpozHDpLcnyE2DpENve5LDug==", "product"=>{"name"=>"Screwdriver", "image"=>"http://s.hswstatic.com/gif/screwdriver-1.jpg"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("name", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Screwdriver"], ["image", "http://s.hswstatic.com/gif/screwdriver-1.jpg"], ["created_at", "2015-06-11 23:39:37.192485"], ["updated_at", "2015-06-11 23:39:37.192485"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/products/2" for ::1 at 2015-06-11 16:39:37 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered products/show.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2015-06-11 16:39:38 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.2ms)

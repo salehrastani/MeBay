@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :products
+
+  def email_shortener
+    self.email[/.+?(?=@)/]
+  end
+
 end

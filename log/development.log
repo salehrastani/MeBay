@@ -3289,3 +3289,31 @@ ActionView::Template::Error (Missing partial products/_form, application/_form w
   Rendered /Users/hamed/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
   Rendered /Users/hamed/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
   Rendered /Users/hamed/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+
+
+Started GET "/products/new" for ::1 at 2015-06-28 12:37:39 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered products/_form.html.erb (2.1ms)
+  Rendered products/new.html.erb within layouts/application (3.5ms)
+  Rendered application/_nav.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for ::1 at 2015-06-28 12:37:41 -0700
+Processing by ProductsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+  Rendered application/_nav.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/1" for ::1 at 2015-06-28 12:37:43 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+  Rendered application/_nav.html.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.2ms)

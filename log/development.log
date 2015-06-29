@@ -4408,3 +4408,12 @@ Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb
 
 
 Started GET "/assets/products.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-28 15:17:55 -0700
+
+
+Started GET "/" for ::1 at 2015-06-29 09:09:16 -0700
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mProduct Load (15.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (27.5ms)
+  Rendered application/_nav.html.erb (1.1ms)
+Completed 200 OK in 408ms (Views: 360.1ms | ActiveRecord: 22.5ms)

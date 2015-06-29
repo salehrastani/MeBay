@@ -1,0 +1,5 @@
+<h2>Put this product to auction</h2>
+  <%= form_for [@products, Auction.new], url: {action: "create"} do |f| %>
+    <%= f.text_field :value %>
+    <%= f.submit%>
+  <% end %>
